@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
     use ({
         "rose-pine/neovim",
-        as = 'onedark-vivid',
+        as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
