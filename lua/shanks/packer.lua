@@ -19,7 +19,12 @@ return require('packer').startup(function(use)
 --         vim.cmd('colorschema rose-pine')
 --     end      
 -- })
+--
 
+use("nvim-tree/nvim-tree.lua")
+
+-- vs-code like icons
+use("nvim-tree/nvim-web-devicons")
     use ({
         "rose-pine/neovim",
         as = 'rose-pine',
@@ -27,8 +32,7 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
     })
-
-        use {
+	    use {
         'nvim-treesitter/nvim-treesitter',
         requires = { 'JoosepAlviste/nvim-ts-context-commentstring' },
         run = function()
@@ -37,6 +41,7 @@ return require('packer').startup(function(use)
         end,
 
     }
+    
 
 end)
 
