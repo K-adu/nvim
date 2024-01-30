@@ -26,6 +26,8 @@ use {
 --     end      
 -- })
 --
+use 'francoiscabrol/ranger.vim'
+use { "christoomey/vim-tmux-navigator" }
 use 'mhinz/vim-startify'
 use("github/copilot.vim")
 use("nvim-tree/nvim-tree.lua")

@@ -8,8 +8,9 @@ local lsp = require('lsp-zero').preset({
 require("mason").setup()
 require("mason-lspconfig").setup {
     ensure_installed = {
-        'lua_ls',
+        "lua_ls",
         'tsserver',
+        'eslint',
         'html',
         'pylsp',
     },
@@ -22,8 +23,11 @@ require("mason-lspconfig").setup {
 lsp.format_on_save({
     servers = {
         ['lua_ls'] = { 'lua' },
+        ['rust_analyzer'] = { 'rust' },
         ['pylsp'] = { 'py', 'python' },
         -- ['py_lsp'] = { 'py' },
+        ['markdown_lint'] = { 'md' },
+        ['omnisharp'] = { 'cs', 'vb' },
         ['html'] = { 'html', 'css' },
         ['tsserver'] = { 'ts', 'js', 'javascript', 'typescript' }
     }
@@ -48,4 +52,3 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
-
