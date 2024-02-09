@@ -4,42 +4,48 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
 
-  use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
--- or                            , branch = '0.1.x',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
--- packer
-use {
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-}
--- use( { 'rose-pine/neovim',
---  as = 'rose-pine'
---     config = function()
---         vim.cmd('colorschema rose-pine')
---     end      
--- })
---
-use 'mhinz/vim-startify'
-use("github/copilot.vim")
-use("nvim-tree/nvim-tree.lua")
-use("mbbill/undotree")
--- vs-code like icons
-use("nvim-tree/nvim-web-devicons")
-    use ({
+    -- packer
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
+    -- use( { 'rose-pine/neovim',
+    --  as = 'rose-pine'
+    --     config = function()
+    --         vim.cmd('colorschema rose-pine')
+    --     end
+    -- })
+    --
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use 'github/copilot.vim'
+    use 'mhinz/vim-startify'
+    use("nvim-tree/nvim-tree.lua")
+    use("mbbill/undotree")
+    -- vs-code like icons
+    use("nvim-tree/nvim-web-devicons")
+    use({
         "rose-pine/neovim",
         as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
     })
-	    use {
+    use {
         'nvim-treesitter/nvim-treesitter',
         requires = { 'JoosepAlviste/nvim-ts-context-commentstring' },
         run = function()
@@ -48,7 +54,7 @@ use("nvim-tree/nvim-web-devicons")
         end,
 
     }
-        use {
+    use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
         requires = {
@@ -72,7 +78,4 @@ use("nvim-tree/nvim-web-devicons")
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
     }
-    
-
 end)
-
