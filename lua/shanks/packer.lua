@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
     --     end
     -- })
     --
+    use ('ggandor/leap.nvim')
+    use {'rcarriga/cmp-dap' }
+
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -36,15 +39,10 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-startify'
     use("nvim-tree/nvim-tree.lua")
     use("mbbill/undotree")
+    use 'voldikss/vim-floaterm'
     -- vs-code like icons
     use("nvim-tree/nvim-web-devicons")
-    use({
-        "rose-pine/neovim",
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
+    use { "olimorris/onedarkpro.nvim" }
     use {
         'nvim-treesitter/nvim-treesitter',
         requires = { 'JoosepAlviste/nvim-ts-context-commentstring' },
@@ -56,7 +54,7 @@ return require('packer').startup(function(use)
     }
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v1.x',
+        branch = 'v3.x',
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },             -- Required
