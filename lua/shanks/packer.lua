@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
     -- })
     --
     use ('ggandor/leap.nvim')
-    use {'rcarriga/cmp-dap' }
 
     use {
         'numToStr/Comment.nvim',

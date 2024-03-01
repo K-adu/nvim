@@ -17,7 +17,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = {'tsserver','eslint'},
+    ensure_installed = {'tsserver','eslint','pyright'},
     handlers = {
         lsp_zero.default_setup,
     }
@@ -25,24 +25,24 @@ require('mason-lspconfig').setup({
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
-local cmp = require('cmp')
+local cmp1= require('cmp')
 local cmp_format = require('lsp-zero').cmp_format()
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = {behavior = cmp1.SelectBehavior.Select}
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-cmp.setup({
+cmp1.setup({
     sources = {
         {name = 'nvim_lsp'},
         {name = 'nvim_lua'},
         {name = 'luasnip'},
         {name = 'buffer'},
     },
-    mapping = cmp.mapping.preset.insert({
-        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-Space>'] = cmp.mapping.complete(),
+    mapping = cmp1.mapping.preset.insert({
+        ['<C-p>'] = cmp1.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp1.mapping.select_next_item(cmp_select),
+        ['<C-y>'] = cmp1.mapping.confirm({ select = true }),
+        ['<C-Space>'] = cmp1.mapping.complete(),
     }),
     capabilities = capabilities,
     snippet = {

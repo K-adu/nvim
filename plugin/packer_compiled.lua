@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/home/shanks/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/shanks/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/shanks/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
