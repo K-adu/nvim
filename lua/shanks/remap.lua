@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>nt", ':NvimTreeToggle<CR>', {
 })
 
 
-
+vim.keymap.set("v", "<leader>d", "\"_d") -- delete without yanking
 vim.keymap.set("v", "<leader>y", "\"+y") -- copy to global clipboard
 vim.keymap.set("n", "<leader>y", "\"+y") -- copy to global clipboard
 vim.keymap.set({ "n", "v" }, "<leader>pp", "\"+p")

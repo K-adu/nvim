@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     --     end
     -- })
     --
+
     use ('ggandor/leap.nvim')
 
     use {
@@ -38,9 +39,13 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-startify'
     use("nvim-tree/nvim-tree.lua")
     use("mbbill/undotree")
-    use 'voldikss/vim-floaterm'
     -- vs-code like icons
-    use("nvim-tree/nvim-web-devicons")
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+            require("toggleterm").setup()
+        end}
+    	use { 'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
     use { "olimorris/onedarkpro.nvim" }
     use {
         'nvim-treesitter/nvim-treesitter',
